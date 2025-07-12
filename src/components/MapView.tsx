@@ -1,6 +1,6 @@
 
 import { useEffect, useRef } from "react";
-import { MapPin, Navigation } from "lucide-react";
+import { MapPin, Navigation, Plus, Minus } from "lucide-react";
 
 interface MapViewProps {
   userLocation: { lat: number; lng: number };
@@ -115,10 +115,10 @@ const MapView = ({ userLocation, selectedTrashCan, onTrashCanSelect }: MapViewPr
       {/* 지도 확대/축소 버튼 */}
       <div className="absolute top-4 right-4 flex flex-col space-y-2 z-30">
         <button className="w-10 h-10 bg-white rounded-lg shadow-lg flex items-center justify-center hover:bg-gray-50">
-          <plus className="h-4 w-4" />+
+          <Plus className="h-4 w-4" />
         </button>
         <button className="w-10 h-10 bg-white rounded-lg shadow-lg flex items-center justify-center hover:bg-gray-50">
-          <minus className="h-4 w-4" />−
+          <Minus className="h-4 w-4" />
         </button>
       </div>
     </div>
