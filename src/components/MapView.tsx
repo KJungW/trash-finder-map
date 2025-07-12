@@ -1,5 +1,5 @@
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { MapPin, Navigation, Plus, Minus } from "lucide-react";
 
 interface MapViewProps {
@@ -20,6 +20,14 @@ const mockTrashCans = [
 
 const MapView = ({ userLocation, selectedTrashCan, onTrashCanSelect }: MapViewProps) => {
   const mapRef = useRef<HTMLDivElement>(null);
+  
+  // 컴포넌트가 처음 렌더링될 때만 랜덤 위치 생성
+  const [trashCanPositions] = useState(() => 
+    mockTrashCans.map(() => ({
+      x: Math.random() * 60 + 20, // 20% ~ 80% 범위
+      y: Math.random() * 60 + 20  // 20% ~ 80% 범위
+    }))
+  );
 
   return (
     <div className="relative w-full h-full bg-green-50 rounded-lg overflow-hidden">
@@ -61,8 +69,7 @@ const MapView = ({ userLocation, selectedTrashCan, onTrashCanSelect }: MapViewPr
 
       {/* 쓰레기통 위치들 */}
       {mockTrashCans.map((trashCan, index) => {
-        const offsetX = (index % 3 - 1) * 80;
-        const offsetY = (Math.floor(index / 3) - 1) * 60;
+        const position = trashCanPositions[index];
         const isSelected = selectedTrashCan === trashCan.id;
         
         return (
@@ -70,8 +77,8 @@ const MapView = ({ userLocation, selectedTrashCan, onTrashCanSelect }: MapViewPr
             key={trashCan.id}
             className="absolute transform -translate-x-1/2 -translate-y-1/2 cursor-pointer z-10"
             style={{ 
-              left: `${50 + offsetX/10}%`, 
-              top: `${50 + offsetY/10}%` 
+              left: `${position.x}%`, 
+              top: `${position.y}%` 
             }}
             onClick={() => onTrashCanSelect(trashCan.id)}
           >

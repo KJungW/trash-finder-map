@@ -1,6 +1,6 @@
 
 import { useState } from "react";
-import { Search, MapPin, Navigation, Coffee, Trash2 } from "lucide-react";
+import { Search, MapPin, Navigation, Trash2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent } from "@/components/ui/card";
@@ -97,39 +97,7 @@ const Index = () => {
           </div>
         </div>
 
-        {/* Quick Scenarios */}
-        <div className="mt-8">
-          <h2 className="text-xl font-semibold mb-4 text-gray-900">자주 찾는 상황</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <Card className="hover:shadow-lg transition-shadow cursor-pointer">
-              <CardContent className="p-4">
-                <div className="flex items-center space-x-3">
-                  <div className="p-2 bg-orange-100 rounded-lg">
-                    <Coffee className="h-5 w-5 text-orange-600" />
-                  </div>
-                  <div>
-                    <h3 className="font-medium text-gray-900">카페 음료컵</h3>
-                    <p className="text-sm text-gray-600">일반쓰레기통 또는 분리수거함</p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
 
-            <Card className="hover:shadow-lg transition-shadow cursor-pointer">
-              <CardContent className="p-4">
-                <div className="flex items-center space-x-3">
-                  <div className="p-2 bg-red-100 rounded-lg">
-                    <MapPin className="h-5 w-5 text-red-600" />
-                  </div>
-                  <div>
-                    <h3 className="font-medium text-gray-900">관광지에서</h3>
-                    <p className="text-sm text-gray-600">주요 관광지 쓰레기통 위치</p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
       </div>
     </div>
   );

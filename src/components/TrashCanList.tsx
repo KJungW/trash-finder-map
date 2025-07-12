@@ -102,11 +102,6 @@ const TrashCanList = ({ selectedTrashCan, onTrashCanSelect, userLocation }: Tras
                       >
                         {trashCan.type}
                       </Badge>
-                      <Badge 
-                        variant={trashCan.available ? 'outline' : 'destructive'}
-                      >
-                        {trashCan.available ? '사용가능' : '만석'}
-                      </Badge>
                     </div>
                     <span className="text-sm font-medium text-blue-600">
                       {trashCan.distance}m
