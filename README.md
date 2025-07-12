@@ -34,7 +34,7 @@ https://trash-finder-map.lovable.app/
 
 <br>
 
-**현재 서비스의 문제점 분석 (기술적인 부분 제외)**
+**현재 서비스의 문제점 분석**
 
 <br>
 
